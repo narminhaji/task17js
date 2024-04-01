@@ -1,4 +1,4 @@
-// 1. Her defe ferqli rengde ekrana cixmali (console.log(${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye);)
+// // 1. Her defe ferqli rengde ekrana cixmali (console.log(${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye);)
 let birthday = new Date("04-28-2024");
 setInterval(() => {
     let now = new Date();
@@ -84,18 +84,18 @@ const soz = setInterval(() => {
 });
 
 function az() {
-    let b = ad.length;
+    let l = ad.length;
     const soz2 = setInterval(() => {
-        if (b === 2) {
+        if (l === 2) {
             clearInterval(soz2);
         }
-        for (let i = 0; i < b - 1; i++) {
+        for (let i = 0; i < l - 1; i++) {
             array.push(ad[i]);
         }
         let sz = array.join("");
         console.log(sz);
         array = [];
-        b--;
+        l--;
     });
 }
 const d = new Date();
