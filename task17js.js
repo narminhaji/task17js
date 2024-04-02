@@ -1,4 +1,4 @@
-// // 1. Her defe ferqli rengde ekrana cixmali (console.log(${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye);)
+// // // 1. Her defe ferqli rengde ekrana cixmali (console.log(${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye);)
 let birthday = new Date("04-28-2024");
 setInterval(() => {
     let now = new Date();
@@ -7,16 +7,16 @@ setInterval(() => {
     let saat = Math.trunc((between / (1000 * 60 * 60)) % 24);
     let deqiqe = Math.trunc((between / (1000 * 60)) % 60);
     let saniye = Math.trunc(between / 1000) % 60;
-    let r = Math.trunc(Math.random() * 300);
-    let g = Math.trunc(Math.random() * 300);
-    let b = Math.trunc(Math.random() * 300);
-    // console.clear();
+    let r = Math.trunc(Math.random() * 255);
+    let g = Math.trunc(Math.random() * 255);
+    let b = Math.trunc(Math.random() * 255);
+    // console.clear()
     console.log(`%c${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye`, `color: rgb(${r},${g},${b})`);
 }, 1000);
 
 let randomNumber = (min, max) => Math.floor((Math.random() * (max - min + 1)) + min);
 
-// 2. Evde yazdiginiz students datasinda searching yazmaq. Prompt-da telebenin adini yazacam eger ele bir telebe varsa mene onu qaytarmalidir.
+// // 2. Evde yazdiginiz students datasinda searching yazmaq. Prompt-da telebenin adini yazacam eger ele bir telebe varsa mene onu qaytarmalidir.
 
 let students = [
     {
@@ -56,19 +56,19 @@ let students = [
 
 let yazilan_ad = prompt("Adınızı daxil edin: ");
 console.log(yazilan_ad);
-let st = students.find(a => a.name.toUpperCase() === yazilan_ad.toUpperCase())
+let st = students.find(a => a.name.toLowerCase() === yazilan_ad.toLowerCase())
 if (st) {
     alert(` BU AD SERVERDƏ MÖVCUDDUR!!! :${st.name}`)
 }
 else {
-    alert("BU AD SERVERDƏ MÖVCUD DEYİL !!ERRORFOUND404!!")
+    alert("BU AD SERVERDƏ MÖVCUD DEYİL !!ERRORFOUND404!! ")
 }
 
 // 3. Prompt ile daxil olunan her soz asagidaki kimi console-da cixmalidir:
 
 let ad = prompt("SÖZ DAXİL EDİN: ")
 let array = []
-let a = 1;
+let a = 0;
 const soz = setInterval(() => {
     for (let i = 0; i < a; i++) {
         array.push(ad[i]);
@@ -86,7 +86,7 @@ const soz = setInterval(() => {
 function az() {
     let l = ad.length;
     const soz2 = setInterval(() => {
-        if (l === 2) {
+        if (l === 1) {
             clearInterval(soz2);
         }
         for (let i = 0; i < l - 1; i++) {
